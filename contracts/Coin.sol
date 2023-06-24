@@ -2,31 +2,39 @@
 pragma solidity ^0.8.4;
 
 contract Coin {
-    address public minter; // 발행자
+
+    // 1. state 변수
+    address public minter; // 발행자 
     mapping (address => uint) public balances;  // mapping (key:value)
 
+    // 2. event 정의
     event Sent (address from, address to, uint amount);
 
-    constructor() { //생성자
+    // 3. 생성자
+    constructor() { 
         minter = msg.sender;
     }  
 
-    function mint(address receiver, uint amount) public {
-        require(msg.sender == minter);   // 검증
+    // 4. 발행 method
+    function mint(address receiver, uint amount) public { 
+        require(msg.sender == minter);   // MGR 권한
         balances[receiver] += amount;
     }
 
+    // 5. 에러 정의
     error InsufficientBalance(uint requested, uint available);
 
     function send(address receiver, uint amount) public {
-        if(amount > balances[msg.sender])  // 계좌에 있는 coin보다 보낼 coin 이 크면 error
+        // 6. 잔액 오류
+        if(amount > balances[msg.sender])  
             revert InsufficientBalance({
                 requested: amount,
                 available: balances[msg.sender]
             });
 
-        balances[msg.sender] -= amount; // 계좌에서 coin 빠져나감
-        balances[receiver] += amount; // 계좌에 coin 들어옴
+        // 7. send method 
+        balances[msg.sender] -= amount; 
+        balances[receiver] += amount; 
         emit Sent(msg.sender, receiver, amount);
     }
 }

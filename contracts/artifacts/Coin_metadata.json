@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.4+commit.c7e474f2"
 	},
 	"language": "Solidity",
 	"output": {
@@ -135,7 +135,7 @@
 		"compilationTarget": {
 			"contracts/Coin.sol": "Coin"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -148,11 +148,11 @@
 	},
 	"sources": {
 		"contracts/Coin.sol": {
-			"keccak256": "0xb19a81006277d1942d362f954e4d012e995ab0a37c5e0bab5688c286f2263349",
+			"keccak256": "0x902633289b58b25581699659e93d432b33a3cf44daf5a9f386befae54f69b0af",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4cd567927ce50e63240a41cc2f98411ccbcd3173f372e05721c663b02f7a6cf9",
-				"dweb:/ipfs/QmXn3tQYbg3jGfPqP5kKXSWYnywwbNQGH4Vd9bNTpiKPNG"
+				"bzz-raw://0a3851a70546c07fc681beeac7fc76dffbaddb31d4a1ed32c0b1ca914fc1af59",
+				"dweb:/ipfs/QmX84zxFQ14MUNr3vN7cjC92ofK55wCdFbxNizpbeVefyQ"
 			]
 		}
 	},
